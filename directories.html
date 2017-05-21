@@ -1,0 +1,15 @@
+<html ng-app>
+<head>
+	<title>using directories</title>
+	<script src = "angular.js"></script>
+</head>
+<body ng-init="name = 'default Username'">
+	{{1+1}}
+	<div ng-hide = "isHidden">
+		Name: <input type = "text" ng-model = "name" /> <span ng-bind = "name"></span> 
+	</div>
+	Hide: <input type = "checkbox" ng-model = "isHidden"/>
+	<br />
+	<button ng-click ="name = 'michelle'"> Change Name</button>
+</body>
+</html>

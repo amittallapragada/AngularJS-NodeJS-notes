@@ -1,0 +1,26 @@
+<h2> {{customer.name }}'s Orders</h2>
+<header>
+    <nav class = "navbar navbar-default">
+        <ul class = "nav navbar-nav">
+            <li><a href="#/customers">Customers</a></li>
+            <li><a href="#/orders">Orders</a></li>
+        </ul>
+    </nav>
+</header>
+<table class = "table">
+    <tr>
+        <th>Product</th>
+        <th>Total</th>
+        <th>Image</th>
+    </tr>
+
+
+
+    <tr ng-repeat="order in customer.orders">
+        <td>{{ order.product }}</td>
+        <td>{{ order.total | currency }}</td>
+    	<td><img src="{{order.images}}" alt="product image" height="50" width="50"></td>
+    </tr>
+
+       	
+</table>

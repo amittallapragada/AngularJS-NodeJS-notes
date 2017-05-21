@@ -1,0 +1,35 @@
+<h2>{{appSettings.title}}</h2>
+<header>
+    <nav class = "navbar navbar-default">
+        <ul class = "nav navbar-nav">
+            <li><a href="#/customers">Customers</a></li>
+            <li><a href="#/orders">Orders</a></li>
+        </ul>
+    </nav>
+</header>
+Filter: <input type="text" ng-model="customerFilter.name" />
+<br /><br />
+
+<table class = "table table-striped">
+    <tr>
+        <th ng-click="doSort('name')">Name</th>
+        <th ng-click="doSort('city')">City</th>
+        <th ng-click="doSort('orderTotal')">Order Total</th>
+        <th ng-click="doSort('joined')">Joined</th>
+        <th>Id</th>
+        <th>Orders</th>
+    </tr>
+    <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse" class = "repeat-animation">
+        <td>{{ cust.name }}</td>
+        <td>{{ cust.city }}</td>
+        <td>{{ cust.orderTotal | currency }}</td>
+        <td>{{ cust.joined | date }}</td>
+        <td>{{cust.id}}</td>
+        <td><a href="#/orders/{{cust.id}}">View Orders</a></td>
+    </tr>
+</table>
+<br />
+<span>Total customers: {{ customers.length }}</span>
+<br />
+<br />
+<footer>Version: {{appSettings.version}}</footer>

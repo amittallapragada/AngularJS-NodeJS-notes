@@ -1,0 +1,26 @@
+<html ng-app>
+<head>
+	<title>Filters</title>
+	<script src = 'angular.js'></script>
+</head>
+<body ng-init = "customers=[{joined: '2000-12-02', name:'John', city:'Chandler', orderTotal: 9.9956}, {joined: '1965-01-25',name:'Zed', city:'Las Vegas', orderTotal: 19.99},{joined: '1944-06-15',name:'Tina', city:'New York', orderTotal:44.99}, {joined: '1995-03-28',name:'Dave', city:'Seattle', orderTotal:101.50}]">
+	<h2>Customers</h2>
+	Filter: <input type = "text"  ng-model = 'customerFilter.name'/>
+	<br/><br/>
+
+	<table>
+		<tr>
+			<th ng-click = "sortBy='name'">Name</th>
+			<th ng-click = "sortBy='city'">City</th>
+			<th ng-click = "sortBy='orderTotal'">Total</th>
+			<th ng-click = "sortBy='joined'">Joined</th>
+		</tr>
+		<tr ng-repeat = "cust in customers | filter: customerFilter | orderBy:sortBy">
+			<td>{{cust.name | uppercase}}</td>
+			<td>{{cust.city | lowercase}}</td>
+			<td>{{cust.orderTotal | currency}}</td>
+			<td>{{cust.joined | date}}</td>
+		</tr>
+	</table>
+</body>
+</html>

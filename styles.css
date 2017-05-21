@@ -1,0 +1,12 @@
+.red {
+    color: red;
+}
+
+.navy {
+    color: navy;   
+}
+
+/* ng-cloak */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng.ng-cloak {
+    display: none !important;
+}

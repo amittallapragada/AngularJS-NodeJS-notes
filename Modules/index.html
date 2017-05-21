@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app = "customersApp">
+<head>
+	<title>Index</title>
+    <link href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel = "stylesheet" type = "text/css"/>
+    <link href="styles/animations.css" rel="stylesheet" type="text/css" />
+    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<header>
+
+</header>
+<body>
+<h1>Customers and Orders</h1>
+	<div ng-view class = "slide-animation"></div>
+
+	<script src = 'scripts/angular.js'></script>
+    <script src = "scripts/angular-animate.js"></script>
+	<script src = "scripts/angular-route.js"></script>
+	<script src="app/app.js"></script>
+    <script src="app/controllers/CustomerController.js"></script>
+    <script src="app/controllers/ordersController.js"></script>
+    <script src="app/controllers/allordersController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src = "app/services/customerFactory.js"></script>
+    <script src = "app/services/customerService.js"></script>
+    <script src = "app/services/values.js"></script>
+</body>
+</html>
+
